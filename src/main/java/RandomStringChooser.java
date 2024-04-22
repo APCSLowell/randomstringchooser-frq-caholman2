@@ -1,10 +1,10 @@
 import java.util.*;
 public class RandomStringChooser
 {
-  private arrayList<String>stringPool;
+  private ArrayList<String>stringPool;
 
   public RandomStringChooser(String[] words){
-    stringPool = new arrayList<String>();
+    stringPool = new ArrayList<String>();
     for(int i=0; i<words.length; i++)
       stringPool.add(words[i]);
   }
