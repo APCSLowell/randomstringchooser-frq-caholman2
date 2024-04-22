@@ -4,7 +4,9 @@ public class RandomStringChooser
   public String[] stringPool;
 
   public RandomStringChooser(String[] words){
-    stringPool = words;
+    stringPool = new String[words.length];
+    for(int i=0; i<words.length; i++)
+      stringPool[i] = words[i];
   }
 
   public String getNext(){
