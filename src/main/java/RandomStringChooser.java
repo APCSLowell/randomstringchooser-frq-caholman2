@@ -1,8 +1,19 @@
 import java.util.*;
 public class RandomStringChooser
 {
-  /* to be implemented in part (a) */
+  public String[] stringPool;
+
+  public RandomStringChooser(String[] words){
+    stringPool = words;
+  }
+
+  public String getNext(){
+    if(stringPool.length == 0)
+      return "NONE";
+    int removeIndex = (int) (Math.random()*stringPool.length)
+    String result = stringPool[removeIndex];
+    stringPool = stringPool.substring(0,removeIndex) + stringPool.substring(removeIndex+1);
+    return result;
+  }
   
-  //Heads up! 
-  //You will get a very confusing error message until you have working code in part b as well
 }
