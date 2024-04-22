@@ -1,20 +1,20 @@
 import java.util.*;
 public class RandomStringChooser
 {
-  public String[] stringPool;
+  private arrayList<String>stringPool;
 
   public RandomStringChooser(String[] words){
-    stringPool = new String[words.length];
+    stringPool = new arrayList<String>();
     for(int i=0; i<words.length; i++)
-      stringPool[i] = words[i];
+      stringPool.add(words[i]);
   }
 
   public String getNext(){
-    if(stringPool.length == 0)
+    if(stringPool.size() == 0)
       return "NONE";
-    int removeIndex = (int) (Math.random()*stringPool.length)
-    String result = stringPool[removeIndex];
-    stringPool = stringPool.substring(0,removeIndex) + stringPool.substring(removeIndex+1);
+    int removeIndex = (int) (Math.random()*stringPool.size());
+    String result = stringPool.get(removeIndex);
+    stringPool.remove(removeIndex);
     return result;
   }
   
